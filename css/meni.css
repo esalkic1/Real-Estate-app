@@ -1,0 +1,20 @@
+body {
+    background-color: #fdf1d3;
+}
+ul {
+    list-style: none;
+    text-align: center;
+}
+ul li{
+    display: inline;
+}
+li a{
+    margin: 0 10px;
+    display: inline;
+    color: #2716ef;
+    text-align: center;
+    text-decoration: none;
+}
+li a:hover {
+    color: #ff9900;
+}
