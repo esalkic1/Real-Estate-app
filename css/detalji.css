@@ -41,7 +41,13 @@ h3{
     grid-column: span 2;
 }
 
-.inquiries{
+#upiti ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#upiti li{
     background-color: white;
     border: 1px solid black;
     padding: 1%;
@@ -52,3 +58,4 @@ h3{
     margin-top: 0;
     font-weight: bold;
 }
+
