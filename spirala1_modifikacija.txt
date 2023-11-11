@@ -1,0 +1,2 @@
+U css sam dodao media query koji ima min-width od 500 px i on modificira sadržaj stranice kad je širina ekrana 
+>= 500 px. Unutar query-a postavio sam display:grid ciji su elementi profilna slika i input forma. 

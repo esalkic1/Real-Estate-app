@@ -5,7 +5,7 @@ body {
 
 #profile-picture{
     display: block;
-    margin: 80px auto 30px;
+    margin: 80px 0 30px;
     width: 10%;
     height: 10%;
     min-width: 100px;
@@ -14,7 +14,7 @@ body {
 
 .form-group {
     max-width: 400px;
-    margin: 5% auto;
+    margin: 5% 0;
 }
 
 .label-input {
@@ -51,3 +51,22 @@ iframe{
     position: fixed;
 }
 
+@media screen and (min-width: 500px) {
+
+    .page{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form-group{
+        margin: 5% 0;
+    }
+
+    #profile-picture{
+        margin: 30px auto;
+        width: 50%;
+        height: 50%;
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
