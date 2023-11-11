@@ -1,0 +1,15 @@
+detalji.html: 1 error
+nekretnine.html: 18 error
+profil.html: 1 error
+Svi error-i su se odnosili na to što nisam koristio alt atribut za img elemente, konkretno: 
+An img element must have an alt attribute, except under certain conditions. 
+
+Korišteni validatori: 
+https://validator.w3.org/ 
+https://www.freeformatter.com/html-validator.html
+
+CSS file-ovi: 0 error
+
+Korišteni validatori:
+https://jigsaw.w3.org/css-validator/
+https://www.lambdatest.com/free-online-tools/css-validator
