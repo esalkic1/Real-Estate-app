@@ -1,11 +1,4 @@
-/*function spojiNekretnine(divReferenca, instancaModula, tip_nekretnine) {
-    // pozivanje metode za filtriranje
-    instancaModula.filtrirajNekretnine({ tip_nekretnine: tip_nekretnine });
-    // iscrtavanje elemenata u divReferenca element
-
-}*/
 function spojiNekretnine(divReferenca, instancaModula, tip_nekretnine) {
-    // Pozivanje metode za filtriranje
     const filtriraneNekretnine = instancaModula.filtrirajNekretnine({ tip_nekretnine: tip_nekretnine });
     
     const nekretninaStil = document.createElement('div');
