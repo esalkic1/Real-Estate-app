@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prijava</title>
+    <link rel="stylesheet" type="text/css" href="../css/prijava.css">
+</head>
+<body>
+    <iframe id="meniFrame" title="Meni" src="meni.html"></iframe>
+    <div class="login-container">
+        <h2>Prijava</h2>
+        <form id="loginForm">
+            <label for="username">Korisničko ime:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Lozinka:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" id="submitBtn">Prijava</button>
+        </form>
+    </div>
+</body>
+
+
+
+<script src="../scripts/PoziviAjax.js"></script>
+<script src="../scripts/meni.js"></script>
+<script src="../scripts/prijava.js"></script>
+</html>

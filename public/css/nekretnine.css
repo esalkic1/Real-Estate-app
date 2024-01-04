@@ -58,3 +58,28 @@ button {
     font-weight: bold;
 }
 
+#filterMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows content to wrap to the next line if needed */
+    margin-top: 20px;
+}
+
+#filterBtn {
+    width: 10%;
+    margin: 0 30px;
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#filterBtn:hover {
+    background-color: #2980b9;
+}
+
+label{
+    margin: 0 5px;
+}

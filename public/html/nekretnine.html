@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nekretnine</title>
+    <link rel="stylesheet" type="text/css" href="../css/nekretnine.css">
+
+</head>
+<body>
+    <iframe title="Meni" src="meni.html"></iframe>
+    <div id="filterMenu">
+        <label for="minPrice">Min Cijena:</label>
+        <input type="text" id="minPrice" name="minPrice">
+    
+        <label for="maxPrice">Max Cijena:</label>
+        <input type="text" id="maxPrice" name="maxPrice">
+    
+        <label for="minArea">Min Kvadratura:</label>
+        <input type="text" id="minArea" name="minArea">
+    
+        <label for="maxArea">Max Kvadratura:</label>
+        <input type="text" id="maxArea" name="maxArea">
+    
+        <button id="filterBtn">Filter</button>
+    </div>
+    <div id="nekretnine">
+        <div id="stan">
+            <!-- <h3>Stan</h3> -->
+        </div>
+        <div id="kuca">
+            <!-- <h3>Kuća</h3> -->
+        </div>
+        <div id="pp">
+            <!-- <h3>Poslovni prostor</h3> -->
+        </div>
+    </div>
+    <script src="../scripts/MarketingAjax.js"></script>
+    <script src="../scripts/PoziviAjax.js"></script>
+    <script src="../scripts/SpisakNekretnina.js"></script>
+    <script src="../scripts/nekretnine.js"></script>
+</body>
+</html>

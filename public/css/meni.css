@@ -1,5 +1,6 @@
 body {
     background-color: #fdf1d3;
+    overflow: hidden;
 }
 ul {
     list-style: none;
