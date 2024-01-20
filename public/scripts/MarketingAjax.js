@@ -112,9 +112,6 @@ const MarketingAjax = (() => {
         const ajaxOsvjezi = new XMLHttpRequest();
         ajaxOsvjezi.open('POST', 'http://localhost:3000/marketing/osvjezi', true);
         ajaxOsvjezi.setRequestHeader('Content-Type', 'application/json');
-        
-        ajaxOsvjezi.send(JSON.stringify({ nizNekretnina }));
-        
 
         ajaxOsvjezi.onreadystatechange = function () {
             if (ajaxOsvjezi.readyState == 4 && ajaxOsvjezi.status == 200) {
@@ -123,24 +120,26 @@ const MarketingAjax = (() => {
                 if(firstCallKlik && firstCallPretraga){
                 firstResponse = response;
                 }
+
+                const ajaxNekretnine = new XMLHttpRequest();
+                ajaxNekretnine.open('POST', 'http://localhost:3000/marketing/nekretnine', true);
+                ajaxNekretnine.setRequestHeader('Content-Type', 'application/json');
+
+                ajaxNekretnine.send(JSON.stringify({ nizNekretnina }));
+
+                ajaxNekretnine.onreadystatechange = function () {
+                    if (ajaxNekretnine.readyState == 4 && ajaxNekretnine.status == 200) {
+                        //console.log('Pretrage updated successfully');
+                    } else if (ajaxNekretnine.readyState == 4) {
+                        console.error(`Error updating pretrage: ${ajaxNekretnine.statusText}`);
+                    }
+                };
             } else if (ajaxOsvjezi.readyState == 4) {
                 console.error(`Error updating klikovi and pretrage: ${ajaxOsvjezi.statusText}`);
             }
         };
 
-        const ajaxNekretnine = new XMLHttpRequest();
-        ajaxNekretnine.open('POST', 'http://localhost:3000/marketing/nekretnine', true);
-        ajaxNekretnine.setRequestHeader('Content-Type', 'application/json');
-
-        ajaxNekretnine.send(JSON.stringify({ nizNekretnina }));
-
-        ajaxNekretnine.onreadystatechange = function () {
-            if (ajaxNekretnine.readyState == 4 && ajaxNekretnine.status == 200) {
-                //console.log('Pretrage updated successfully');
-            } else if (ajaxNekretnine.readyState == 4) {
-                console.error(`Error updating pretrage: ${ajaxNekretnine.statusText}`);
-            }
-        };
+        ajaxOsvjezi.send(JSON.stringify({ nizNekretnina }));
     }
     function impl_klikNekretnina(idNekretnine) {
         const ajaxOsvjezi = new XMLHttpRequest();

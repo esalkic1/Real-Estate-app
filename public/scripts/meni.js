@@ -23,9 +23,9 @@ function updateMenu() {
             nekretnineItem.innerHTML = '<a href="nekretnine.html" target="_top"><b>Nekretnine</b></a>';
             menuItems.appendChild(nekretnineItem);
 
-            const detaljiItem = document.createElement('li');
-            detaljiItem.innerHTML = '<a href="detalji.html" target="_top"><b>Detalji</b></a>';
-            menuItems.appendChild(detaljiItem);
+            // const detaljiItem = document.createElement('li');
+            // detaljiItem.innerHTML = '<a href="detalji.html" target="_top"><b>Detalji</b></a>';
+            // menuItems.appendChild(detaljiItem);
 
             const odjavaItem = document.createElement('li');
             const odjavaButton = document.createElement('button');
@@ -36,8 +36,8 @@ function updateMenu() {
                         console.error(`Error: ${error}`);
                     } else {
                         //console.log('Logout Data:', data);
+                        window.top.location.href = "nekretnine.html";
                         updateMenu();
-                        // da li treba redirect? 
                     }
                 });
             });
@@ -49,9 +49,9 @@ function updateMenu() {
             nekretnineItem.innerHTML = '<a href="nekretnine.html" target="_top"><b>Nekretnine</b></a>';
             menuItems.appendChild(nekretnineItem);
 
-            const detaljiItem = document.createElement('li');
-            detaljiItem.innerHTML = '<a href="detalji.html" target="_top"><b>Detalji</b></a>';
-            menuItems.appendChild(detaljiItem);
+            // const detaljiItem = document.createElement('li');
+            // detaljiItem.innerHTML = '<a href="detalji.html" target="_top"><b>Detalji</b></a>';
+            // menuItems.appendChild(detaljiItem);
 
             const prijavaItem = document.createElement('li');
             prijavaItem.innerHTML = '<a href="prijava.html" target="_top"><b>Prijava</b></a>';

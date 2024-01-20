@@ -16,6 +16,7 @@ function spojiNekretnine(divReferenca, instancaModula, kriteriji) {
     }
 
 filtriraneNekretnine.forEach(nekretnina => {
+    //console.log(nekretnina);
     const nekretninaDiv = document.createElement('div');
     nekretninaDiv.classList.add('nekretnina');
     nekretninaDiv.innerHTML = `
@@ -25,10 +26,15 @@ filtriraneNekretnine.forEach(nekretnina => {
         <p class="price">${nekretnina.cijena} BAM</p>
         <div id="pretrage-${nekretnina.id}">Broj pretraga: </div>
         <div id="klikovi-${nekretnina.id}">Broj klikova: </div>
+        <div id="lokacija-${nekretnina.id}" style="display: none;">Lokacija: ${nekretnina.lokacija}</div>
+        <div id="godina-${nekretnina.id}" style="display: none;">Godina izgradnje: ${nekretnina.godina_izgradnje}</div>
         <button class="detaljiBtn" id="detaljiBtn-${nekretnina.id}">Detalji</button>
+        <button class="otvoriDetaljeBtn" id="otvoriDetaljeBtn-${nekretnina.id}" style="display: none;">Otvori detalje</button>
     `;
 
     const detaljiBtn = nekretninaDiv.querySelector(`#detaljiBtn-${nekretnina.id}`);
+    const otvoriDetaljeBtn = nekretninaDiv.querySelector(`#otvoriDetaljeBtn-${nekretnina.id}`);
+
     detaljiBtn.addEventListener('click', function () {
         let allDivs = document.querySelectorAll(".nekretnina");
         const nekretninaId = this.id.split('-')[1];
@@ -43,12 +49,32 @@ filtriraneNekretnine.forEach(nekretnina => {
                 item.style.width = '270px';
                 item.style.gridColumn = 'auto';
                 item.style.justifySelf = 'auto';
+
+                const lokacijaDiv = item.querySelector(`#lokacija-${idDiv}`);
+                const godinaDiv = item.querySelector(`#godina-${idDiv}`);
+                const otvoriDetaljeBtn = item.querySelector(`#otvoriDetaljeBtn-${idDiv}`);
+
+                lokacijaDiv.style.display = 'none';
+                godinaDiv.style.display = 'none';
+                otvoriDetaljeBtn.style.display = 'none';
             }
         })
+
+        const lokacijaDiv = nekretninaDiv.querySelector(`#lokacija-${nekretnina.id}`);
+        const godinaDiv = nekretninaDiv.querySelector(`#godina-${nekretnina.id}`);
+
+        lokacijaDiv.style.display = 'block';
+        godinaDiv.style.display = 'block';
+
+        otvoriDetaljeBtn.style.display = 'block';
 
         nekretninaDiv.style.width = '450px';
         nekretninaDiv.style.gridColumn = 'span 2';
         nekretninaDiv.style.justifySelf = 'center';
+    });
+
+    otvoriDetaljeBtn.addEventListener('click', function () {
+        window.location.href = `detalji.html?id=${nekretnina.id}`; 
     });
 
     nekretninaStil.appendChild(nekretninaDiv);
